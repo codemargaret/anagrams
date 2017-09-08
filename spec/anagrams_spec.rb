@@ -29,5 +29,8 @@ describe('#anagrams') do
     expect(user_words.anagrams('avid','diva')).to(eq("These words are palindromes"))
   end
 
+  it('will require words with vowels') do
+    expect(user_words.is_word('why hmph', 'she is an ugly diva')).to(eq("You need to input actual words!"))
+  end
 
 end
