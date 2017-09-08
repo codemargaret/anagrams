@@ -30,7 +30,7 @@ describe('#anagrams') do
   end
 
   it('will require words with vowels') do
-    expect(user_words.is_word('why hmph', 'she is an ugly diva')).to(eq("You need to input actual words!"))
+    expect(user_words.anagrams('why hmph', 'she is an unbelievable diva')).to(eq("You need to input actual words!"))
   end
 
 end

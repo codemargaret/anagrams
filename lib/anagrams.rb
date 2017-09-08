@@ -6,9 +6,11 @@ class Words
     @word_2 = word_2
   end
 
-  def is_word(word_1,word_2)
-    word_1_array = word_1.split(" ")
-    word_2_array = word_2.split(" ")
+  def anagrams(word_1, word_2)
+    sm_word_1 = word_1.downcase
+    sm_word_2 = word_2.downcase
+    word_1_array = sm_word_1.split(" ")
+    word_2_array = sm_word_2.split(" ")
     words_from_both = word_1_array.concat(word_2_array)
     real_words = []
     not_words = []
@@ -21,19 +23,9 @@ class Words
       end
     end
 
-    if not_words.empty?
-      "Ok, let's look for anagrams"
-    else
-      "You need to input actual words!"
-    end
-  end#is_word method
-
-  def anagrams(word_1, word_2)
     sm_word_1 = word_1.downcase.delete(" ")
     sm_word_2 = word_2.downcase.delete(" ")
-
     word_2_rev = sm_word_2.reverse
-
     word_1_letters = sm_word_1.split("")
     word_2_letters = sm_word_2.split("")
     letter_matches = []
@@ -46,7 +38,9 @@ class Words
       letter_matches.push(sm_word_1.match?(letter))
     end
 
-    if (letter_matches.include?(false))
+    if not_words.any?
+      "You need to input actual words!"
+    elsif (letter_matches.include?(false))
       "These words are not anagrams"
     elsif (sm_word_1 == word_2_rev)
       "These words are palindromes"
