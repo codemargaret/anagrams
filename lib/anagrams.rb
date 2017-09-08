@@ -15,7 +15,11 @@ class Words
       letter_matches.push(word_1.match?(letter))
     end
 
-    letter_matches.include?(false)
+    if (letter_matches.include?(false))
+      "These words are not anagrams"
+    else
+      "These words are anagrams"
+    end
   end #anagrams method
 
 end #Words class
