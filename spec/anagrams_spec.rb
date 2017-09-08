@@ -33,4 +33,8 @@ describe('#anagrams') do
     expect(user_words.anagrams('why hmph', 'she is an unbelievable diva')).to(eq("You need to input actual words!"))
   end
 
+  it('will check for antigrams') do
+    expect(user_words.anagrams('hi', 'bye')).to(eq("These words have no letter matches and are antigrams!"))
+  end
+
 end

@@ -29,6 +29,7 @@ class Words
     word_1_letters = sm_word_1.split("")
     word_2_letters = sm_word_2.split("")
     letter_matches = []
+    trues = []
 
     word_1_letters.each() do |letter|
       letter_matches.push(sm_word_2.match?(letter))
@@ -38,8 +39,17 @@ class Words
       letter_matches.push(sm_word_1.match?(letter))
     end
 
+    letter_matches.each() do |true_false|
+      true_false_str = true_false.to_s
+      if (true_false_str == "true")
+        trues.push(true_false_str)
+      end
+    end
+
     if not_words.any?
       "You need to input actual words!"
+    elsif trues.empty?
+      "These words have no letter matches and are antigrams!"
     elsif (letter_matches.include?(false))
       "These words are not anagrams"
     elsif (sm_word_1 == word_2_rev)
