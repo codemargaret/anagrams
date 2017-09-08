@@ -1,18 +1,18 @@
 class Words
 
   def anagrams(word_1, word_2)
-    word_1_letters = word_1.split("")
-    word_2_letters = word_2.split("")
-
+    sm_word_1 = word_1.downcase
+    sm_word_2 = word_2.downcase
+    word_1_letters = sm_word_1.split("")
+    word_2_letters = sm_word_2.split("")
     letter_matches = []
-    # letter_matches_strings = []
 
     word_1_letters.each() do |letter|
-      letter_matches.push(word_2.match?(letter))
+      letter_matches.push(sm_word_2.match?(letter))
     end
 
     word_2_letters.each() do |letter|
-      letter_matches.push(word_1.match?(letter))
+      letter_matches.push(sm_word_1.match?(letter))
     end
 
     if (letter_matches.include?(false))
