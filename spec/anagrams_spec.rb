@@ -20,4 +20,9 @@ describe('#anagrams') do
   it('will ignore capital letters in words that are not anagrams') do
     expect(user_words.anagrams('On','JumboTron')).to(eq("These words are not anagrams"))
   end
+
+  it('will ignore spaces in sentences and phrases') do
+    expect(user_words.anagrams('video game','give a demo')).to(eq("These words are anagrams"))
+  end
+
 end

@@ -5,8 +5,8 @@ class Words
   end
 
   def anagrams(word_1, word_2)
-    sm_word_1 = word_1.downcase
-    sm_word_2 = word_2.downcase
+    sm_word_1 = word_1.downcase.delete(" ")
+    sm_word_2 = word_2.downcase.delete(" ")
     word_1_letters = sm_word_1.split("")
     word_2_letters = sm_word_2.split("")
     letter_matches = []
