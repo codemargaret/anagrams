@@ -22,15 +22,15 @@ describe('#anagrams') do
   end
 
   it('will check for palindromes') do
-    expect(user_words.anagrams('avid','diva')).to(eq("These words are palindromes"))
+    expect(user_words.palindromes('avid','diva')).to(eq("These words are palindromes"))
   end
 
   it('will require words with vowels') do
-    expect(user_words.anagrams('why hmph', 'she is an unbelievable diva')).to(eq("You need to input actual words!"))
+    expect(user_words.is_word('why hmph', 'she is an unbelievable diva')).to(eq("You need to input actual words!"))
   end
 
   it('will check for antigrams') do
-    expect(user_words.anagrams('hi', 'bye')).to(eq("These words have no letter matches and are antigrams!"))
+    expect(user_words.antigrams('hi', 'bye')).to(eq("These words have no letter matches and are antigrams!"))
   end
 
   it('will ignore punctuation') do
