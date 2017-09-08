@@ -23,20 +23,20 @@ class Words
       end
     end
 
-    sm_word_1 = word_1.downcase.delete(" ")
-    sm_word_2 = word_2.downcase.delete(" ")
-    word_2_rev = sm_word_2.reverse
-    word_1_letters = sm_word_1.split("")
-    word_2_letters = sm_word_2.split("")
+    no_punc_1 = sm_word_1.gsub(/\W+/, '')
+    no_punc_2 = sm_word_2.gsub(/\W+/, '')
+    word_2_rev = no_punc_2.reverse
+    word_1_letters = no_punc_1.split("")
+    word_2_letters = no_punc_2.split("")
     letter_matches = []
     trues = []
 
     word_1_letters.each() do |letter|
-      letter_matches.push(sm_word_2.match?(letter))
+      letter_matches.push(no_punc_2.match?(letter))
     end
 
     word_2_letters.each() do |letter|
-      letter_matches.push(sm_word_1.match?(letter))
+      letter_matches.push(no_punc_1.match?(letter))
     end
 
     letter_matches.each() do |true_false|
@@ -47,6 +47,7 @@ class Words
     end
 
     if not_words.any?
+      # not_words
       "You need to input actual words!"
     elsif trues.empty?
       "These words have no letter matches and are antigrams!"

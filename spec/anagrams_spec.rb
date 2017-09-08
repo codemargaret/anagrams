@@ -37,4 +37,8 @@ describe('#anagrams') do
     expect(user_words.anagrams('hi', 'bye')).to(eq("These words have no letter matches and are antigrams!"))
   end
 
+  it('will ignore punctuation') do
+    expect(user_words.anagrams("Anti-democratic time table", "Dictator came in, bet I'm late!")).to(eq("These words are anagrams"))
+  end
+
 end
