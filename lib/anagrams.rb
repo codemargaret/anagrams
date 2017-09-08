@@ -6,6 +6,16 @@ class Words
 
   def anagrams(word_1, word_2)
     word_1_letters = word_1.split("")
-    word_2.match?(word_1_letters[0])
+    word_2_letters = word_2.split("")
+    truth_array = []
+
+    word_1_letters.each() do |letter|
+      truth_array.push(word_2.match?(letter))
+    end
+
+    word_2_letters.each() do |letter|
+      truth_array.push(word_1.match?(letter))
+    end
+    truth_array
   end
 end
