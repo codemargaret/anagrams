@@ -25,4 +25,9 @@ describe('#anagrams') do
     expect(user_words.anagrams('video game','give a demo')).to(eq("These words are anagrams"))
   end
 
+  it('will check for palindromes') do
+    expect(user_words.anagrams('avid','diva')).to(eq("These words are palindromes"))
+  end
+
+
 end

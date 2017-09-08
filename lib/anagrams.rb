@@ -7,6 +7,7 @@ class Words
   def anagrams(word_1, word_2)
     sm_word_1 = word_1.downcase.delete(" ")
     sm_word_2 = word_2.downcase.delete(" ")
+    word_2_rev = sm_word_2.reverse
     word_1_letters = sm_word_1.split("")
     word_2_letters = sm_word_2.split("")
     letter_matches = []
@@ -21,6 +22,8 @@ class Words
 
     if (letter_matches.include?(false))
       "These words are not anagrams"
+    elsif (sm_word_1 == word_2_rev)
+      "These words are palindromes"
     else
       "These words are anagrams"
     end
