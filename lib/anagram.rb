@@ -1,16 +1,15 @@
-class Words
+class Anagram
   include Enumerable
+  attr_reader :input_1, :input_2
 
-  def initialize(input_1,input_2)
-    @input_1 = input_1
-    @input_2 = input_2
+  def initialize(input_1, input_2)
+    @input_1 = input_1.downcase
+    @input_2 = input_2.downcase
   end
 
-  def anagrams(input_1, input_2)
-    sm_input_1 = input_1.downcase
-    sm_input_2 = input_2.downcase
-    input_1_words = sm_input_1.split(" ")
-    input_2_words = sm_input_2.split(" ")
+  def anagrams
+    input_1_words = input_1.split(" ")
+    input_2_words = input_2.split(" ")
     words_from_both = input_1_words.concat(input_2_words)
     real_words = []
     not_words = []
@@ -23,8 +22,8 @@ class Words
       end
     end
 
-    no_punc_1 = sm_input_1.gsub(/\W+/, '')
-    no_punc_2 = sm_input_2.gsub(/\W+/, '')
+    no_punc_1 = input_1.gsub(/\W+/, '')
+    no_punc_2 = input_2.gsub(/\W+/, '')
     input_2_rev = no_punc_2.reverse
     input_1_letters = no_punc_1.split("")
     input_2_letters = no_punc_2.split("")
