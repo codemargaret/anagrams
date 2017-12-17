@@ -1,4 +1,4 @@
-class Words
+class Anagram
   include Enumerable
 
   def initialize(input_1,input_2)

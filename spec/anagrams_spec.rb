@@ -2,7 +2,7 @@ require ('rspec')
 require ('pry')
 require ('anagrams')
 
-user_words = Words.new(@unput_1,@input_2)
+user_words = Anagram.new(@input_1,@input_2)
 
 describe('#anagrams') do
   it('will tell you if two words are anagrams') do
