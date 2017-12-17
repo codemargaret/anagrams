@@ -1,11 +1,17 @@
 # _Anagrams and Antigrams_
 
-#### _A program that compares two words to see if they are anagrams or antigrams, 9.8.2017_
+#### _A program that compares two words to see if they are anagrams or antigrams, 12.16.2017_
 
 #### By _**Margaret Berry**_
 
 ## Description
-_The program checks how many letters two words have in common.  If the words have all of the same letters, they are anagrams, and if they have no letters in common, they are antigrams._
+_The program checks how many letters two words have in common.  If the words have all of the same letters, they are anagrams, and if they have no letters in common, they are antigrams. Originally created 9.8.2017, refactored on 12.16.2017._
+
+## Project Goals
+* _Create a custom class._
+* _Use instance variables._
+* _Write understandable logic._
+* _Complete testing coverage._
 
 ## Specifications
 
