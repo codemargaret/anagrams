@@ -26,7 +26,7 @@ _Run the following commands in Terminal:_
 
 1. `$ git clone` [this repository](https://github.com/codemargaret/anagrams.git)
 2. `$ cd anagrams`
-3. _Open in your preferred text editor for a closer look at the code. There is currently no way to run it in the browser._
+3. `$ ruby app.rb`
 
 ## Known Bugs
 _There are no known bugs at this time._
